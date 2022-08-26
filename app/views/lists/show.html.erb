@@ -1,0 +1,32 @@
+ <!--
+  <ol>
+    <% @list.bookmarks.each do |bookmark| %>
+
+      <li class="link-secondary"><%= link_to bookmark.movie.title, list_path(bookmark[:id]), class: "link-secondary"  %></li>
+
+    <%end%>
+  </ol>
+  <div class="cards">
+   <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= bookmark.movie.poster_url %>)">
+      <%= bookmark.movie.title %>
+    </div>
+    <%end%>
+  </div>
+-->
+<div class="cards">
+  <% @list.bookmarks.each do |bookmark| %>
+
+      <div class="card-trip">
+      <img src=<%= bookmark.movie.poster_url %> />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= bookmark.movie.title %></h2>
+          <p><%= bookmark.movie.overview %></p>
+        </div>
+        <%# <h2 class="card-trip-pricing">£99.99</h2> %>
+        <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+      </div>
+    </div>
+   <%end%>
+  </div>

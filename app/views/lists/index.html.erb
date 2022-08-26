@@ -1,0 +1,9 @@
+<div class="container bg-light">
+  <ol>
+    <% @lists.each do |list| %>
+
+      <li class="link-secondary"><%= link_to list.name, list_path(list[:id]), class: "link-secondary"  %></li>
+
+    <%end%>
+  </ol>
+</div>
